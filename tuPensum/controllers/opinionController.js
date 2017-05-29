@@ -45,7 +45,6 @@ exports.opinionDetalle = function(req, res) {
 // Nueva opinion
 exports.nuevaOpinion = function(req, res) {
 	var sess = req.session;
-	console.log("Nueva");
 	if(sess.logged){
 		daoMateria.listarTodas(function(err, result) {
 			if(err) {
