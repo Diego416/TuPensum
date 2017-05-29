@@ -22,3 +22,5 @@ Las opiniones de los usuarios incluyen parametros como el nivel de dificultad de
 
 # Ejecutar
     SET DEBUG=express-locallibrary-tutorial:* & npm run devstart
+    
+  La aplicación quedará escuchando por el puerto 3000
