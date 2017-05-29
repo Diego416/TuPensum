@@ -1,0 +1,29 @@
+extends layout
+
+block contenido
+  h1(class="cover-heading") Materias
+  div(id="table-wrapper")
+    div(id="table-scroll")
+      table
+        thead
+          tr
+            th Nombre
+            th Universidad
+            th Detalle
+        tbody
+          each materia in data
+            tr
+              td= materia.nombreMateria
+              td= materia.nombreUniversidad
+              td
+                a(href="/materias/"+materia.idMateria class="btn btn-lg btn-plus") +
+
+block menu
+  li
+    a(href="/") Home
+  li(class="active")
+    a(href="#") Materias
+  li
+    a(href="/opiniones") Opiniones
+  li
+    a(href="/pensum") Pensum

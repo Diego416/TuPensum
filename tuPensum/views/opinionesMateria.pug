@@ -1,0 +1,28 @@
+extends layout
+
+block contenido
+  h1(class="cover-heading") Opiniones - #{data[0].nombreMateria} (#{data[0].nombreUniversidad})
+  div(id="table-wrapper")
+    div(id="table-scroll")
+      table
+        thead
+          tr
+            th Dificultad
+            th Tiempo
+            th Detalle
+        tbody
+          each opinion in data
+            tr
+              td= opinion.calificacionDificultad
+              td= opinion.calificacionTiempo
+              td= opinion.opinion
+
+block menu
+  li
+    a(href="/") Home
+  li
+    a(href="/materias") Materias
+  li(class="active")
+    a(href="#") Opiniones
+  li
+    a(href="/pensum") Pensum

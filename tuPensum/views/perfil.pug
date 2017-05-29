@@ -1,0 +1,36 @@
+extends layout
+
+block contenido
+
+  form(class="form-signup" action="" method="post")
+    h2(class="form-signup-heading") Perfil
+    input(type="text" id="txtCedula" name="txtCedula" class="form-control" value=data[0].cedulaUsuario placeholder="Cedula" disabled)
+    br
+    br
+    input(type="text" id="txtNombre" name="txtNombre" class="form-control" value=data[0].nombre placeholder="Nombre" required="")
+    br
+    br
+    input(type="text" id="txtApellido" name="txtApellido" class="form-control" value=data[0].apellido placeholder="Apellido" required="")
+    br
+    br
+    input(type="email" id="txtEmail" name="txtEmail" class="form-control" value=data[0].email placeholder="Email" required="")
+    br
+    br
+    input(type="text" id="txtUserName" name="txtUserName" class="form-control" value=data[0].CuentaUsuario_userName placeholder="User name" disabled)
+    br
+    br
+    input(type="password" id="txtPassword" name="txtPassword" class="form-control" placeholder="Password" required="")
+    br
+    br
+    button(id="btnUpdate" class="btn btn-lg btn-default" type="submit") Actualizar    
+  p(class="Message")= Message
+
+block menu
+  li
+    a(href="/") Home
+  li
+    a(href="/materias") Materias
+  li
+    a(href="/opiniones") Opiniones
+  li
+    a(href="/pensum") Pensum

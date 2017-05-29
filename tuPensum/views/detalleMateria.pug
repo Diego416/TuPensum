@@ -1,0 +1,35 @@
+extends layout
+
+block contenido
+  h1(class="cover-heading") #{data[0].nombreMateria}
+  div(id="table-wrapper")
+    div(id="table-scroll")
+      table
+        thead
+          tr
+            th Universidad
+            th Creditos
+            th Valor
+            th Numero de opiniones
+            if count[0].opiniones > 0
+              th Ver opiniones
+        tbody
+          each materia in data
+            tr
+              td= materia.nombreUniversidad
+              td= materia.numCreditos
+              td= materia.valor
+              td= count[0].opiniones
+              if count[0].opiniones > 0
+                td
+                  a(href="/opiniones/materia/"+materia.idMateria class="btn btn-lg btn-plus") Ver
+
+block menu
+  li
+    a(href="/") Home
+  li(class="active")
+    a(href="#") Materias
+  li
+    a(href="/opiniones") Opiniones
+  li
+    a(href="/pensum") Pensum

@@ -1,0 +1,45 @@
+extends layout
+
+block contenido
+
+  form(class="form-signup" action="" method="post")
+    h2(class="form-signup-heading") Sign up
+    input(type="text" id="txtCedula" name="txtCedula" class="form-control" placeholder="Cedula" required="" autofocus="")
+    br
+    br
+    input(type="text" id="txtNombre" name="txtNombre" class="form-control" placeholder="Nombre" required="")
+    br
+    br
+    input(type="text" id="txtApellido" name="txtApellido" class="form-control" placeholder="Apellido" required="")
+    br
+    br
+    input(type="email" id="txtEmail" name="txtEmail" class="form-control" placeholder="Email" required="")
+    br
+    br
+    select(id="txtCarrera" name="txtCarrera" class="form-control")
+      option(value="0") -- Seleccione carrera --
+      each carrera in carreras
+        option(value=""+carrera.idCarrera+"") #{carrera.nombreCarrera} (#{carrera.nombreUniversidad})
+    br
+    br
+    input(type="number" id="txtSemestre" name="txtSemestre" class="form-control" placeholder="Semestre actual" required="")
+    br
+    br
+    input(type="text" id="txtUserName" name="txtUserName" class="form-control" placeholder="User name" required="" autofocus="")
+    br
+    br
+    input(type="password" id="txtPassword" name="txtPassword" class="form-control" placeholder="Password" required="")
+    br
+    br
+    button(id="btnSignUp" class="btn btn-lg btn-default" type="submit") Sign up    
+  p(class="errorMessage")= errorMessage
+
+block menu
+  li
+    a(href="/") Home
+  li
+    a(href="/materias") Materias
+  li
+    a(href="/opiniones") Opiniones
+  li
+    a(href="/pensum") Pensum

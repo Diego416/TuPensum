@@ -1,0 +1,33 @@
+extends layout
+
+block contenido
+
+  form(class="form-signup" action="" method="post")
+    h2(class="form-signup-heading") Nueva opinión
+    select(id="txtMateria" name="txtMateria" class="form-control")
+      option(value="0") -- Seleccione materia --
+      each materia in data
+        option(value=""+materia.idMateria+"") #{materia.nombreMateria} (#{materia.nombreUniversidad})
+    br
+    br
+    input(type="number" id="txtDificultad" name="txtDificultad" class="form-control" placeholder="Dificultad" min="1" max="10" required="")
+    br
+    br
+    input(type="number" id="txtTiempo" name="txtTiempo" class="form-control" placeholder="Horas semanales extras necesarias" required="")
+    br
+    br
+    textarea(id="txtOpinion" name="txtOpinion" class="form-control" placeholder="Opinion general" required="" rows="6" cols="35")
+    br
+    br    
+    button(id="btnOpinion" class="btn btn-lg btn-default" type="submit") Ingresar opinion   
+  p(class="errorMessage")= errorMessage
+
+block menu
+  li
+    a(href="/") Home
+  li
+    a(href="/materias") Materias
+  li
+    a(href="/opiniones") Opiniones
+  li
+    a(href="/pensum") Pensum

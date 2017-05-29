@@ -1,0 +1,29 @@
+extends layout
+
+block contenido
+  h1(class="cover-heading") Pensum
+  div(id="table-wrapper")
+    div(id="table-scroll")
+      table
+        thead
+          tr
+            th Semestre
+            th Materia
+            th Detalle
+        tbody
+          each materia in data
+            tr
+              td= materia.semestre
+              td= materia.nombreMateria
+              td
+                a(href="/materias/"+materia.Materia_idMateria class="btn btn-lg btn-plus") +
+
+block menu
+  li
+    a(href="/") Home
+  li
+    a(href="/materias") Materias
+  li
+    a(href="/opiniones") Opiniones
+  li(class="active")
+    a(href="#") Pensum
