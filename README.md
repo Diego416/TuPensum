@@ -6,16 +6,16 @@ Las opiniones de los usuarios incluyen parametros como el nivel de dificultad de
 
 # Tecnologías usadas
   
-  -Node js (v6.10.3)
-  -Express js (v4.15.2)
-  -MySql (v5.5.45)
-  -Bootstrap para Node (v3.3.7)
+    -Node js (v6.10.3)
+    -Express js (v4.15.2)
+    -MySql (v5.5.45)
+    -Bootstrap para Node (v3.3.7)
 
 # Patrones de diseño implementados
 
-  -MVC
-  -DAO
-  -Resource pooling
+    -MVC
+    -DAO
+    -Resource pooling
 
 # Instalar dependencias
     npm install
